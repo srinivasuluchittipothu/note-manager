@@ -1,17 +1,23 @@
-import pymysql
+# import pymysql
 
-db_config = {
-    'host':'localhost',
-    'user':'root',
-    'password': '1682824',
-    'database': 'notes',
-    'cursorclass':pymysql.cursors.DictCursor
-}
+# db_config = {
+#     'host':'localhost',
+#     'user':'root',
+#     'password': '1682824',
+#     'database': 'notes',
+#     'cursorclass':pymysql.cursors.DictCursor
+# }
 
-def get_db_connection():    
-    conn = pymysql.connect(**db_config)
-    return conn
+# def get_db_connection():    
+#     conn = pymysql.connect(**db_config)
+#     return conn
+import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
 
+def get_db_connection():
+    DATABASE_URL = os.environ.get("DATABASE_URL")
+    return psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
 def db_init():
     
     conn = get_db_connection()

@@ -18,7 +18,9 @@ from Database import (db_init, db_verification_insert,
 from itsdangerous import URLSafeTimedSerializer
 
 app = Flask(__name__)
-db_init()
+if __name__ == "__main__":
+    db_init()
+    app.run()
 app.secret_key="sri"
 serializer=URLSafeTimedSerializer(secret_key="sri")
 admin_email="srinivasuluch796@gmail.com"
