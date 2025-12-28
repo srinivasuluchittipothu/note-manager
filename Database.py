@@ -1,14 +1,12 @@
 import pymysql
 import pymysql.cursors
 import os
-
 db_config = {
-    'host': os.environ.get('RAILWAY_TCP_PROXY_DOMAIN'),
-    'user': os.environ.get('root'),
-    'password': os.environ.get('BoLoIbXDWdSQrEAyQoDTARrJBKCszLIA'),
-    'database': os.environ.get('MYSQL_DATABASE'),
-    'port': int(os.environ.get('RAILWAY_TCP_PROXY_PORT')),
-    'charset': 'utf8mb4',
+    'host' : 'mysql.railway.internal',
+    'user': 'root',
+    'password': 'OmMcoDBAXzZOrqMNwOwkSmDttpKXuZoY',
+    'database' : 'railway',
+    
     'cursorclass': pymysql.cursors.DictCursor
 }
 
