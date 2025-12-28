@@ -23,6 +23,9 @@ app.secret_key="sri"
 serializer=URLSafeTimedSerializer(secret_key="sri")
 admin_email="srinivasuluch796@gmail.com"
 admin_password="xhgi irfx pkld olms"
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))  # Use Render's port or fallback to 5000
+    app.run(host="0.0.0.0", port=port, debug=True)
 
 def send_mail(to_email, body):    
     msg = EmailMessage()
@@ -271,7 +274,4 @@ def logout():
     return redirect(url_for("home"))
 
 
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))  # Use Render's port or fallback to 5000
-    app.run(host="0.0.0.0", port=port, debug=True)
 # app.run(debug = True)
