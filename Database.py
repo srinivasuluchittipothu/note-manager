@@ -1,19 +1,19 @@
 # import pymysql
-
-# db_config = {
-#     'host':'localhost',
-#     'user':'root',
-#     'password': '1682824',
-#     'database': 'notes',
-#     'cursorclass':pymysql.cursors.DictCursor
-# }
+import os
+import psycopg2
+from psycopg2.extras import RealDictCursor
+db_config = {
+    'host':'dpg-d58ie73uibrs73aodqgg-a',
+    'user':'note_manager_user',
+    'password': 'pDFoCX4Kxh4Hq8mit14shZNt5hNdIRed',
+    'database': 'note_manager',
+    'cursorclass':psycopg2.cursors.DictCursor
+}
 
 # def get_db_connection():    
 #     conn = pymysql.connect(**db_config)
 #     return conn
-import os
-import psycopg2
-from psycopg2.extras import RealDictCursor
+
 
 def get_db_connection():
     DATABASE_URL = os.environ.get("DATABASE_URL")
