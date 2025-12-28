@@ -1,22 +1,29 @@
-# import pymysql
+import pymysql
+import pymysql.cursors
 import os
-import psycopg2
+
 db_config = {
-    'host':'dpg-d58ie73uibrs73aodqgg-a',
-    'user':'note_manager_user',
-    'password': 'pDFoCX4Kxh4Hq8mit14shZNt5hNdIRed',
-    'database': 'note_manager',
-    'cursor_factory': psycopg2.cursors.DictCursor
+    'host': os.environ.get('RAILWAY_TCP_PROXY_DOMAIN'),
+    'user': os.environ.get('MYSQLUSER'),
+    'password': os.environ.get('MYSQL_ROOT_PASSWORD'),
+    'database': os.environ.get('MYSQL_DATABASE'),
+    'port': int(os.environ.get('RAILWAY_TCP_PROXY_PORT')),
+    'charset': 'utf8mb4',
+    'cursorclass': pymysql.cursors.DictCursor
 }
 
+
+def get_db_connection():    
+    conn = pymysql.connect(**db_config)
+    return conn
 # def get_db_connection():    
 #     conn = pymysql.connect(**db_config)
 #     return conn
 
-
-def get_db_connection():
-    DATABASE_URL = os.environ.get("DATABASE_URL")
-    return psycopg2.connect(DATABASE_URL, cursor_factory=psycopg2.cursors.DictCursor)
+def get_db_connection():    
+    conn = pymysql.connect(**db_config)
+    
+    return conn
 def db_init():
     
     conn = get_db_connection()
