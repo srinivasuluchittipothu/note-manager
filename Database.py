@@ -1,13 +1,13 @@
 # import pymysql
 import os
 import psycopg2
-from psycopg2.extras import RealDictCursor
+from psycopg2.extras import DictCursor
 db_config = {
     'host':'dpg-d58ie73uibrs73aodqgg-a',
     'user':'note_manager_user',
     'password': 'pDFoCX4Kxh4Hq8mit14shZNt5hNdIRed',
     'database': 'note_manager',
-    'cursorclass':psycopg2.cursors.DictCursor
+    'cursor_factory': DictCursor
 }
 
 # def get_db_connection():    
