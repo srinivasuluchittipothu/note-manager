@@ -4,8 +4,8 @@ import os
 
 db_config = {
     'host': os.environ.get('RAILWAY_TCP_PROXY_DOMAIN'),
-    'user': os.environ.get('MYSQLUSER'),
-    'password': os.environ.get('MYSQL_ROOT_PASSWORD'),
+    'user': os.environ.get('root'),
+    'password': os.environ.get('BoLoIbXDWdSQrEAyQoDTARrJBKCszLIA'),
     'database': os.environ.get('MYSQL_DATABASE'),
     'port': int(os.environ.get('RAILWAY_TCP_PROXY_PORT')),
     'charset': 'utf8mb4',
