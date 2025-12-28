@@ -1,13 +1,16 @@
 import pymysql
 import pymysql.cursors
 import os
+import os
+
 db_config = {
-    'host' : 'mysql.railway.internal',
-    'user': 'root',
-    'password': 'OmMcoDBAXzZOrqMNwOwkSmDttpKXuZoY',
-    'database' : 'railway',
+    'host': os.environ.get('mysql.railway.internal'),
     
-    'cursorclass': pymysql.cursors.DictCursor
+    'user': os.environ.get('root'),
+    'password': os.environ.get('OmMcoDBAXzZOrqMNwOwkSmDttpKXuZoY'),
+    'database': os.environ.get('railway'),
+    'charset': 'utf8mb4',
+    'cursorclass': pymysql.cursors.DictCursor,
 }
 
 
