@@ -1,13 +1,13 @@
 # import pymysql
 import os
 import psycopg2
-from psycopg2.extras import DictCursor
+from psycopg2.extras import DictCursor as cursor
 db_config = {
     'host':'dpg-d58ie73uibrs73aodqgg-a',
     'user':'note_manager_user',
     'password': 'pDFoCX4Kxh4Hq8mit14shZNt5hNdIRed',
     'database': 'note_manager',
-    'cursor_factory': DictCursor
+    'cursor_factory': cursor
 }
 
 # def get_db_connection():    
@@ -17,7 +17,7 @@ db_config = {
 
 def get_db_connection():
     DATABASE_URL = os.environ.get("DATABASE_URL")
-    return psycopg2.connect(DATABASE_URL, cursor_factory=DictCursor)
+    return psycopg2.connect(DATABASE_URL, cursor_factory=cursor)
 def db_init():
     
     conn = get_db_connection()
