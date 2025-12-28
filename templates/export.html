@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Export Notes{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='export.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="export-notes-container">
+    <h2>Export Notes</h2>
+
+    {% if message %}
+        <div class="{{ message_type }}">{{ message }}</div>
+    {% endif %}
+
+    {% if notes %}
+        <ul class="notes-list">
+            {% for note in notes %}
+                <li>
+                    <h3>{{ note.TITLE }}</h3>
+                    <p>{{ note.CONTENT[:100] }}...</p>
+                    <a href="{{ url_for('export_note_txt',nid=note.get('NOTES_ID')) }}">Download TXT</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No notes available for export.</p>
+    {% endif %}
+</div>
+{% endblock %}

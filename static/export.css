@@ -1,0 +1,77 @@
+/* Container */
+.export-notes-container {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+}
+
+/* Heading */
+.export-notes-container h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 1.5rem;
+}
+
+/* Flash messages */
+.success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+.error {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 0.75rem;
+    border-radius: 6px;
+    margin-bottom: 1rem;
+}
+
+/* Notes list */
+.notes-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+.notes-list li {
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0;
+}
+
+.notes-list h3 {
+    margin: 0;
+    color: #333;
+    font-size: 18px;
+}
+
+.notes-list p {
+    color: #666;
+    margin: 0.5rem 0;
+    font-size: 14px;
+}
+
+/* Export links/buttons */
+.notes-list a {
+    color: #007bff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 1rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #007bff;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.notes-list a:hover {
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+}
