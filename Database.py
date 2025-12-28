@@ -17,7 +17,7 @@ db_config = {
 
 def get_db_connection():
     DATABASE_URL = os.environ.get("DATABASE_URL")
-    return psycopg2.connect(DATABASE_URL, cursor_factory=RealDictCursor)
+    return psycopg2.connect(DATABASE_URL, cursor_factory=DictCursor)
 def db_init():
     
     conn = get_db_connection()
