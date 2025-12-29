@@ -1,6 +1,6 @@
 import pymysql
 import pymysql.cursors
-import os
+
 import os
 
 db_config = {
@@ -21,10 +21,10 @@ def get_db_connection():
 #     conn = pymysql.connect(**db_config)
 #     return conn
 
-def get_db_connection():    
-    conn = pymysql.connect(**db_config)
+# def get_db_connection():    
+#     conn = pymysql.connect(**db_config)
     
-    return conn
+#     return conn
 def db_init():
     
     conn = get_db_connection()
