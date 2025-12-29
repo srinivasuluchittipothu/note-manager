@@ -8,7 +8,7 @@ db_config = {
     
     'user': 'admin',
     'password':'UjjXGZoZIFFViwJasbpv',
-    'database': os.environ.get('railway'),
+    
     'port':3306,
     
     'cursorclass': pymysql.cursors.DictCursor,
