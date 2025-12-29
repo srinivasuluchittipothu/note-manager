@@ -4,12 +4,13 @@ import pymysql.cursors
 import os
 
 db_config = {
-    'host': os.environ.get('mysql.railway.internal'),
+    'host':'database-1.c5ee62s8kg7t.eu-north-1.rds.amazonaws.com',
     
-    'user': os.environ.get('root'),
-    'password': os.environ.get('OmMcoDBAXzZOrqMNwOwkSmDttpKXuZoY'),
+    'user': 'admin',
+    'password':'UjjXGZoZIFFViwJasbpv',
     'database': os.environ.get('railway'),
-    'charset': 'utf8mb4',
+    'port':3306,
+    
     'cursorclass': pymysql.cursors.DictCursor,
 }
 
